@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "590859310060",
+    "project_id": "ganar-dinero---gu-a-definitiva",
+    "storage_bucket": "ganar-dinero---gu-a-definitiva.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590859310060:android:6e1dfcac306b0cae58e6c9",
+        "android_client_info": {
+          "package_name": "com.pacificblack.ganardinero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590859310060-qjk3igaunsghe029vlhv0hu2hrhl0ltp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGefCes1DOAu74MoQvo2IEk2U6_31notk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590859310060-qjk3igaunsghe029vlhv0hu2hrhl0ltp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_inicio" />
+
+        <item android:title="@string/facil">
+            <menu>
+                <item
+                    android:id="@+id/nav_publicidad"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_publicicadad" />
+                <item
+                    android:id="@+id/nav_aplicaciones"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_aplicaciones" />
+            </menu>
+        </item>
+
+        <item android:title="@string/intermedio">
+            <menu>
+                <item
+                    android:id="@+id/nav_videos"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_videos" />
+                <item
+                    android:id="@+id/nav_mineria"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_criptomonedas" />
+            </menu>
+        </item>
+
+        <item android:title="@string/dificil">
+            <menu>
+                <item
+                    android:id="@+id/nav_vendiendo"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_vendiendo" />
+                <item
+                    android:id="@+id/nav_desarrollo"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_desarrollando" />
+                <item
+                    android:id="@+id/nav_workhome"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gd_freelance" />
+
+            </menu>
+        </item>
+
+
+
+    </group>
+
+</menu>

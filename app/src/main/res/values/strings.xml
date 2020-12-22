@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Ganar dinero - Guía definitiva</string>
+    <string name="slogan">"Puedes ganar dinero desde cualquier parte del mundo, el unico limite es tu mente"</string>
+
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_gd_aplicaciones">Aplicaciones</string>
+    <string name="menu_gd_freelance">Trabajando desde Casa</string>
+    <string name="menu_gd_criptomonedas">Mineria de Criptomonedas</string>
+    <string name="menu_gd_publicicadad">Viendo Publicidad</string>
+    <string name="menu_gd_desarrollando">Desarrollando Software</string>
+    <string name="menu_gd_videos">Creando Videos</string>
+    <string name="menu_gd_vendiendo">Vendiendo en Linea</string>
+
+    <string name="facil">Facil</string>
+    <string name="intermedio">Intermedio</string>
+    <string name="dificil">Dificil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
