@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Ganar dinero - Guía definitiva</string>
     <string name="slogan">"Puedes ganar dinero desde cualquier parte del mundo, el unico limite es tu mente"</string>
-
+    <!-- Menu lateral -->
     <string name="menu_inicio">Inicio</string>
     <string name="menu_gd_aplicaciones">Aplicaciones</string>
     <string name="menu_gd_freelance">Trabajando desde Casa</string>
@@ -10,10 +10,14 @@
     <string name="menu_gd_desarrollando">Desarrollando Software</string>
     <string name="menu_gd_videos">Creando Videos</string>
     <string name="menu_gd_vendiendo">Vendiendo en Linea</string>
-
+    <!-- Subtitulos menu -->
     <string name="facil">Facil</string>
     <string name="intermedio">Intermedio</string>
     <string name="dificil">Dificil</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Rows -->
+    <string name="titulo_row">Titulo Rows</string>
+    <string name="fecha_row">2020/02/12</string>
+    <string name="descripcion_row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis tempor efficitur. Cras mollis urna aliquet augue consectetur malesuada. In hac habitasse platea dictumst. Nullam ac nibh porta, maximus est vehicula, iaculis enim. Vivamus in dictum lectus, vel dapibus enim. Morbi id diam a sem tempor porttitor. Donec libero sapien.  </string>
+    <string name="vistas_row">Vistas: 0</string>
+    <string name="imagen_row">Aquí va una imagen</string>
 </resources>

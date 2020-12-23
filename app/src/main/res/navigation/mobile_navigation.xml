@@ -11,4 +11,10 @@
         android:label="@string/menu_inicio"
         tools:layout="@layout/fragment_inicio" />
 
+    <fragment
+        android:id="@+id/nav_aplicaciones"
+        android:name="com.pacificblack.ganardinero.ui.aplicaciones.AplicacionesFragment"
+        android:label="@string/menu_gd_aplicaciones"
+        tools:layout="@layout/fragment_aplicaciones"/>
+
 </navigation>
