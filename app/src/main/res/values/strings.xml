@@ -20,4 +20,7 @@
     <string name="descripcion_row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis tempor efficitur. Cras mollis urna aliquet augue consectetur malesuada. In hac habitasse platea dictumst. Nullam ac nibh porta, maximus est vehicula, iaculis enim. Vivamus in dictum lectus, vel dapibus enim. Morbi id diam a sem tempor porttitor. Donec libero sapien.  </string>
     <string name="vistas_row">Vistas: 0</string>
     <string name="imagen_row">Aquí va una imagen</string>
+
+
+    <string name="anunciotest">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
