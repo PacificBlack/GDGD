@@ -115,28 +115,5 @@ public class AplicacionesFragment extends Fragment {
 
     }
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.buscadora, menu);
-        MenuItem searchItem = menu.findItem(R.id.buscar);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setQueryHint("Ingrese la aplicacion que desea buscar");
-
-        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                aplicacionesAdaptador.getFilter().filter(newText);
-                return false;
-            }
-        });
-    }
-
 
 }

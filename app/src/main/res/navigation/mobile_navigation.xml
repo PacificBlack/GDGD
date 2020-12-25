@@ -17,4 +17,10 @@
         android:label="@string/menu_gd_aplicaciones"
         tools:layout="@layout/fragment_aplicaciones"/>
 
+    <fragment
+        android:id="@+id/nav_videos"
+        android:name="com.pacificblack.ganardinero.ui.creandovideos.VideosFragment"
+        android:label="@string/menu_gd_videos"
+        tools:layout="@layout/fragment_videos" />
+
 </navigation>

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GanarDineroGuíaDefinitiva">
+        <activity android:name=".actividades.creandovideos.VideosDetalle"></activity>
         <activity android:name=".actividades.aplicaciones.AplicacionDetalle" />
         <activity
             android:name=".MainActivity"
@@ -20,10 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7236340326570289~7203549474"/>
-
+            android:value="ca-app-pub-7236340326570289~7203549474" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
