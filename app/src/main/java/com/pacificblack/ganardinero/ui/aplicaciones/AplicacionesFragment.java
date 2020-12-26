@@ -4,13 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,6 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.pacificblack.ganardinero.R;
 import com.pacificblack.ganardinero.actividades.aplicaciones.AplicacionDetalle;
 import com.pacificblack.ganardinero.clases.aplicaciones.Aplicaciones;
@@ -34,7 +35,8 @@ public class AplicacionesFragment extends Fragment {
     private AplicacionesAdaptador aplicacionesAdaptador;
     private ArrayList<Aplicaciones> listaAplicaciones;
     private InterstitialAd AnuncioAplicacion;
-
+    private FirebaseDatabase bd = FirebaseDatabase.getInstance();
+    private DatabaseReference referencebd = bd.getReference().child("aplicaciones");
 
     public AplicacionesFragment() {
 
@@ -70,48 +72,81 @@ public class AplicacionesFragment extends Fragment {
 
 
     private void llenar() {
-        listaAplicaciones = new ArrayList<>();
-        listaAplicaciones.add(new Aplicaciones("Ensayo", "orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis tempor efficitur. Cras mollis urna aliquet augue consectetur malesuada. In hac habitasse platea dictumst. Nullam ac nibh porta, maximus est vehicula, iaculis enim. Vivamus in dictum lectus, vel dapibus enim. Morbi id", "Desc2", "Vacio", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Vacio", "Vacio"));
-        listaAplicaciones.add(new Aplicaciones("Ensayo", "orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis tempor efficitur. Cras mollis urna aliquet augue consectetur malesuada. In hac habitasse platea dictumst. Nullam ac nibh porta, maximus est vehicula, iaculis enim. Vivamus in dictum lectus, vel dapibus enim. Morbi id", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2", "Desc2"));
 
-
-        aplicacionesAdaptador = new AplicacionesAdaptador(listaAplicaciones);
-        recyclerView.setAdapter(aplicacionesAdaptador);
-        aplicacionesAdaptador.notifyDataSetChanged();
-
-        aplicacionesAdaptador.setOnClickListener(new View.OnClickListener() {
+        referencebd.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if (AnuncioAplicacion.isLoaded()) {
+                listaAplicaciones = new ArrayList<>();
 
-                    AnuncioAplicacion.show();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
 
-                    AnuncioAplicacion.setAdListener(new AdListener() {
-                        @Override
-                        public void onAdClosed() {
-                            super.onAdClosed();
+                    String titulo = dataSnapshot.child("titulo").getValue(String.class);
+                    String desc1 = dataSnapshot.child("des1").getValue(String.class);
+                    String desc2 = dataSnapshot.child("des2").getValue(String.class);
+                    String desc3 = dataSnapshot.child("des3").getValue(String.class);
+                    String desc4 = dataSnapshot.child("des4").getValue(String.class);
+                    String desc5 = dataSnapshot.child("des5").getValue(String.class);
+                    String fecha = dataSnapshot.child("fecha").getValue(String.class);
+                    String imagen1 = dataSnapshot.child("imagen1").getValue(String.class);
+                    String imagen2 = dataSnapshot.child("imagen2").getValue(String.class);
+                    String imagen3 = dataSnapshot.child("imagen3").getValue(String.class);
+                    String imagen4 = dataSnapshot.child("imagen4").getValue(String.class);
+                    String imagen5 = dataSnapshot.child("imagen5").getValue(String.class);
 
-                            AnuncioAplicacion.loadAd(new AdRequest.Builder().build());
-
-                            Aplicaciones aplicaciones = listaAplicaciones.get(recyclerView.getChildAdapterPosition(v));
-
-                            Intent cambio = new Intent(getContext(), AplicacionDetalle.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putSerializable(IdClaveAplicaciones, aplicaciones);
-                            cambio.putExtras(bundle);
-                            startActivity(cambio);
-                        }
-                    });
+                    listaAplicaciones.add(new Aplicaciones(titulo, desc1, desc2, desc3, desc4, desc5, fecha, imagen1, imagen2, imagen3, imagen4, imagen5));
 
 
-                } else {
-                    Log.d("Anuncio", "No se pudo cargar el anuncio.");
                 }
 
 
+                aplicacionesAdaptador = new AplicacionesAdaptador(listaAplicaciones);
+                recyclerView.setAdapter(aplicacionesAdaptador);
+                aplicacionesAdaptador.notifyDataSetChanged();
+
+                aplicacionesAdaptador.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if (AnuncioAplicacion.isLoaded()) {
+
+                            AnuncioAplicacion.show();
+
+                            AnuncioAplicacion.setAdListener(new AdListener() {
+                                @Override
+                                public void onAdClosed() {
+                                    super.onAdClosed();
+
+                                    AnuncioAplicacion.loadAd(new AdRequest.Builder().build());
+
+                                    Aplicaciones aplicaciones = listaAplicaciones.get(recyclerView.getChildAdapterPosition(v));
+
+                                    Intent cambio = new Intent(getContext(), AplicacionDetalle.class);
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable(IdClaveAplicaciones, aplicaciones);
+                                    cambio.putExtras(bundle);
+                                    startActivity(cambio);
+                                }
+                            });
+
+
+                        } else {
+                            Log.d("Anuncio", "No se pudo cargar el anuncio.");
+                        }
+
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getContext(), "Error al traer la base de datos" + error, Toast.LENGTH_LONG).show();
+
             }
         });
+
 
     }
 
