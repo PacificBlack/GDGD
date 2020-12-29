@@ -1,9 +1,9 @@
 package com.pacificblack.ganardinero.metodos;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.pacificblack.ganardinero.R;
 import com.squareup.picasso.Picasso;
@@ -15,6 +15,7 @@ import static com.pacificblack.ganardinero.constatnes.Constantes.Imagen;
 public class Abrir extends AppCompatActivity {
     ImageView imagengrande;
     PhotoViewAttacher mAtacher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class Abrir extends AppCompatActivity {
         Bundle recibido = getIntent().getExtras();
 
 
-        if (recibido != null){
+        if (recibido != null) {
             String valor = getIntent().getExtras().getString(Imagen);
             Picasso.get().load(valor)
                     .placeholder(R.drawable.sample)

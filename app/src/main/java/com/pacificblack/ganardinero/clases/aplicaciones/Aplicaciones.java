@@ -3,7 +3,7 @@ package com.pacificblack.ganardinero.clases.aplicaciones;
 import java.io.Serializable;
 
 public class Aplicaciones implements Serializable {
-    String titulo, des1, des2, des3, des4, des5,fecha;
+    String titulo, des1, des2, des3, des4, des5, fecha;
     String imagen1, imagen2, imagen3, imagen4, imagen5;
 
     public Aplicaciones() {

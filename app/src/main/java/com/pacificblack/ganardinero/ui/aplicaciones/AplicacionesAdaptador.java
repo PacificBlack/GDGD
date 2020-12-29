@@ -22,41 +22,18 @@ public class AplicacionesAdaptador extends RecyclerView.Adapter<AplicacionesAdap
 
     private List<Aplicaciones> listaAplicaciones;
     private List<Aplicaciones> listaAplicacionesFull;
-    private View.OnClickListener listener;
-
-    public AplicacionesAdaptador(ArrayList<Aplicaciones> listaAplicaciones) {
-        this.listaAplicaciones = listaAplicaciones;
-        listaAplicacionesFull = new ArrayList<>(listaAplicaciones);
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        if (listener!=null){
-            listener.onClick(v);
-        }
-    }
-
-    public void setOnClickListener(View.OnClickListener listener){
-        this.listener=listener;
-    }
-
-    @Override
-    public Filter getFilter() {
-        return listaAplicacionesFiltro;
-    }
 
     public Filter listaAplicacionesFiltro = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<Aplicaciones> filtroListaAplicacion = new ArrayList<>();
-            if (constraint==null || constraint.length()==0){
+            if (constraint == null || constraint.length() == 0) {
                 filtroListaAplicacion.addAll(listaAplicacionesFull);
 
-            }else {
+            } else {
                 String filtroparametro = constraint.toString().toLowerCase().trim();
-                for (Aplicaciones itemAplicacion : listaAplicacionesFull){
-                    if(itemAplicacion.getTitulo().toLowerCase().contains(filtroparametro) || itemAplicacion.getDes1().toLowerCase().contains(filtroparametro)){
+                for (Aplicaciones itemAplicacion : listaAplicacionesFull) {
+                    if (itemAplicacion.getTitulo().toLowerCase().contains(filtroparametro) || itemAplicacion.getDes1().toLowerCase().contains(filtroparametro)) {
                         filtroListaAplicacion.add(itemAplicacion);
                     }
                 }
@@ -73,24 +50,47 @@ public class AplicacionesAdaptador extends RecyclerView.Adapter<AplicacionesAdap
             notifyDataSetChanged();
         }
     };
+    private View.OnClickListener listener;
+
+
+    public AplicacionesAdaptador(ArrayList<Aplicaciones> listaAplicaciones) {
+        this.listaAplicaciones = listaAplicaciones;
+        listaAplicacionesFull = new ArrayList<>(listaAplicaciones);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
+    }
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return listaAplicacionesFiltro;
+    }
 
     @NonNull
     @Override
     public AplicacionesAdaptador.AplicacionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_aplicaciones,null,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_aplicaciones, null, false);
         view.setOnClickListener(this);
         return new AplicacionHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AplicacionesAdaptador.AplicacionHolder holder, int position) {
-        if (listaAplicaciones.get(position).getImagen1() != null){
+        if (listaAplicaciones.get(position).getImagen1() != null) {
 
             Picasso.get().load(listaAplicaciones.get(position).getImagen1())
                     .placeholder(R.drawable.sample)
                     .error(R.drawable.sample)
                     .into(holder.imagen);
-        }else{
+        } else {
             holder.imagen.setImageResource(R.drawable.sample);
         }
 
@@ -106,8 +106,9 @@ public class AplicacionesAdaptador extends RecyclerView.Adapter<AplicacionesAdap
     }
 
     public class AplicacionHolder extends RecyclerView.ViewHolder {
-        TextView titulo,descripcion,fecha;
+        TextView titulo, descripcion, fecha;
         ImageView imagen;
+
         public AplicacionHolder(@NonNull View itemView) {
             super(itemView);
 

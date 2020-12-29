@@ -3,7 +3,7 @@ package com.pacificblack.ganardinero.clases.creandovideos;
 import java.io.Serializable;
 
 public class Videos implements Serializable {
-    String titulo, des1, des2, des3, des4, des5,fecha;
+    String titulo, des1, des2, des3, des4, des5, fecha;
     String imagen1, imagen2, imagen3, imagen4, imagen5;
 
     public Videos(String titulo, String des1, String des2, String des3, String des4, String des5, String fecha, String imagen1, String imagen2, String imagen3, String imagen4, String imagen5) {

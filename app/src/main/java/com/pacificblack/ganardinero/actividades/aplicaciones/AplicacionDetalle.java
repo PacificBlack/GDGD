@@ -65,15 +65,12 @@ public class AplicacionDetalle extends AppCompatActivity {
             des1.setText(aplicaciones.getDes1());
             Picasso.get().load(aplicaciones.getImagen1()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen1);
             final String imagen1_link = aplicaciones.getImagen1();
-            imagen1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), Abrir.class);
-                    Bundle envioimg = new Bundle();
-                    envioimg.putString(Imagen, imagen1_link);
-                    intent.putExtras(envioimg);
-                    startActivity(intent);
-                }
+            imagen1.setOnClickListener(v -> {
+                Intent intent = new Intent(getApplicationContext(), Abrir.class);
+                Bundle envioimg = new Bundle();
+                envioimg.putString(Imagen, imagen1_link);
+                intent.putExtras(envioimg);
+                startActivity(intent);
             });
 
             if (aplicaciones.getDes2().equals(Vacio)) {

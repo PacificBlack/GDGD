@@ -1,4 +1,4 @@
-package com.pacificblack.ganardinero.actividades.creandovideos;
+package com.pacificblack.ganardinero.actividades.publicidad;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,16 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.pacificblack.ganardinero.R;
-import com.pacificblack.ganardinero.clases.creandovideos.Videos;
+import com.pacificblack.ganardinero.clases.publicidad.Publicidad;
 import com.pacificblack.ganardinero.metodos.Abrir;
 import com.squareup.picasso.Picasso;
 
 import static com.pacificblack.ganardinero.constatnes.Constantes.Imagen;
 import static com.pacificblack.ganardinero.constatnes.Constantes.Vacio;
-import static com.pacificblack.ganardinero.metodos.Claves.IdClaveVideos;
+import static com.pacificblack.ganardinero.metodos.Claves.IdClavePublicidad;
 
-public class VideosDetalle extends AppCompatActivity {
-
+public class PublicidadDetalle extends AppCompatActivity {
     TextView titulo, des1, des2, des3, des4, des5;
     ImageView imagen1, imagen2, imagen3, imagen4, imagen5;
     AdView ban1, ban2, ban3, ban4;
@@ -28,43 +27,43 @@ public class VideosDetalle extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detalle_videos);
+        setContentView(R.layout.detalle_publicidad);
 
-        titulo = findViewById(R.id.titulo_detalle_videos);
-        des1 = findViewById(R.id.descripcion1_detalle_videos);
-        des2 = findViewById(R.id.descripcion2_detalle_videos);
-        des3 = findViewById(R.id.descripcion3_detalle_videos);
-        des4 = findViewById(R.id.descripcion4_detalle_videos);
-        des5 = findViewById(R.id.descripcion5_detalle_videos);
-        imagen1 = findViewById(R.id.imagen1_detalle_videos);
-        imagen2 = findViewById(R.id.imagen2_detalle_videos);
-        imagen3 = findViewById(R.id.imagen3_detalle_videos);
-        imagen4 = findViewById(R.id.imagen4_detalle_videos);
-        imagen5 = findViewById(R.id.imagen5_detalle_videos);
+        titulo = findViewById(R.id.titulo_detalle_publicidad);
+        des1 = findViewById(R.id.descripcion1_detalle_publicidad);
+        des2 = findViewById(R.id.descripcion2_detalle_publicidad);
+        des3 = findViewById(R.id.descripcion3_detalle_publicidad);
+        des4 = findViewById(R.id.descripcion4_detalle_publicidad);
+        des5 = findViewById(R.id.descripcion5_detalle_publicidad);
+        imagen1 = findViewById(R.id.imagen1_detalle_publicidad);
+        imagen2 = findViewById(R.id.imagen2_detalle_publicidad);
+        imagen3 = findViewById(R.id.imagen3_detalle_publicidad);
+        imagen4 = findViewById(R.id.imagen4_detalle_publicidad);
+        imagen5 = findViewById(R.id.imagen5_detalle_publicidad);
 
         AdRequest adRequest = new AdRequest.Builder().build();
-        ban1 = findViewById(R.id.banner1_videos);
-        ban2 = findViewById(R.id.banner2_videos);
-        ban3 = findViewById(R.id.banner3_videos);
-        ban4 = findViewById(R.id.banner4_videos);
+        ban1 = findViewById(R.id.banner1_publicidad);
+        ban2 = findViewById(R.id.banner2_publicidad);
+        ban3 = findViewById(R.id.banner3_publicidad);
+        ban4 = findViewById(R.id.banner4_publicidad);
 
         ban1.loadAd(adRequest);
         ban2.loadAd(adRequest);
         ban3.loadAd(adRequest);
         ban4.loadAd(adRequest);
 
-        Bundle objetovideos = getIntent().getExtras();
+        Bundle objetopublicidad = getIntent().getExtras();
 
-        Videos videos = null;
+        Publicidad publicidad = null;
 
-        if (objetovideos != null) {
+        if (objetopublicidad != null) {
 
-            videos = (Videos) objetovideos.getSerializable(IdClaveVideos);
+            publicidad = (Publicidad) objetopublicidad.getSerializable(IdClavePublicidad);
 
-            titulo.setText(videos.getTitulo());
-            des1.setText(videos.getDes1());
-            Picasso.get().load(videos.getImagen1()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen1);
-            final String imagen1_link = videos.getImagen1();
+            titulo.setText(publicidad.getTitulo());
+            des1.setText(publicidad.getDes1());
+            Picasso.get().load(publicidad.getImagen1()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen1);
+            final String imagen1_link = publicidad.getImagen1();
             imagen1.setOnClickListener(v -> {
                 Intent intent = new Intent(getApplicationContext(), Abrir.class);
                 Bundle envioimg = new Bundle();
@@ -73,32 +72,32 @@ public class VideosDetalle extends AppCompatActivity {
                 startActivity(intent);
             });
 
-            if (videos.getDes2().equals(Vacio)) {
+            if (publicidad.getDes2().equals(Vacio)) {
                 des2.setVisibility(View.GONE);
             } else {
-                des2.setText(videos.getDes2());
+                des2.setText(publicidad.getDes2());
             }
-            if (videos.getDes3().equals(Vacio)) {
+            if (publicidad.getDes3().equals(Vacio)) {
                 des3.setVisibility(View.GONE);
             } else {
-                des3.setText(videos.getDes3());
+                des3.setText(publicidad.getDes3());
             }
-            if (videos.getDes4().equals(Vacio)) {
+            if (publicidad.getDes4().equals(Vacio)) {
                 des4.setVisibility(View.GONE);
             } else {
-                des4.setText(videos.getDes4());
+                des4.setText(publicidad.getDes4());
             }
-            if (videos.getDes5().equals(Vacio)) {
+            if (publicidad.getDes5().equals(Vacio)) {
                 des5.setVisibility(View.GONE);
             } else {
-                des5.setText(videos.getDes5());
+                des5.setText(publicidad.getDes5());
             }
 
-            if (videos.getImagen2().equals(Vacio)) {
+            if (publicidad.getImagen2().equals(Vacio)) {
                 imagen2.setVisibility(View.GONE);
             } else {
-                Picasso.get().load(videos.getImagen2()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen2);
-                final String imagen2_link = videos.getImagen2();
+                Picasso.get().load(publicidad.getImagen2()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen2);
+                final String imagen2_link = publicidad.getImagen2();
                 imagen2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -110,11 +109,11 @@ public class VideosDetalle extends AppCompatActivity {
                     }
                 });
             }
-            if (videos.getImagen3().equals(Vacio)) {
+            if (publicidad.getImagen3().equals(Vacio)) {
                 imagen3.setVisibility(View.GONE);
             } else {
-                Picasso.get().load(videos.getImagen3()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen3);
-                final String imagen3_link = videos.getImagen3();
+                Picasso.get().load(publicidad.getImagen3()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen3);
+                final String imagen3_link = publicidad.getImagen3();
                 imagen3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -126,11 +125,11 @@ public class VideosDetalle extends AppCompatActivity {
                     }
                 });
             }
-            if (videos.getImagen4().equals(Vacio)) {
+            if (publicidad.getImagen4().equals(Vacio)) {
                 imagen4.setVisibility(View.GONE);
             } else {
-                Picasso.get().load(videos.getImagen4()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen4);
-                final String imagen4_link = videos.getImagen4();
+                Picasso.get().load(publicidad.getImagen4()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen4);
+                final String imagen4_link = publicidad.getImagen4();
                 imagen4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -142,11 +141,11 @@ public class VideosDetalle extends AppCompatActivity {
                     }
                 });
             }
-            if (videos.getImagen5().equals(Vacio)) {
+            if (publicidad.getImagen5().equals(Vacio)) {
                 imagen5.setVisibility(View.GONE);
             } else {
-                Picasso.get().load(videos.getImagen5()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen5);
-                final String imagen5_link = videos.getImagen5();
+                Picasso.get().load(publicidad.getImagen5()).placeholder(R.drawable.sample).error(R.drawable.sample).into(imagen5);
+                final String imagen5_link = publicidad.getImagen5();
                 imagen5.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

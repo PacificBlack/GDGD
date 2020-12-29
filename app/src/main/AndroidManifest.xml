@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GanarDineroGuíaDefinitiva">
-        <activity android:name=".metodos.Abrir"></activity>
+        <activity android:name=".actividades.workhome.WorkHomeDetalle"></activity>
+        <activity android:name=".actividades.vender.VenderDetalle" />
+        <activity android:name=".actividades.publicidad.PublicidadDetalle" />
+        <activity android:name=".actividades.desarrollo.DesarrolloDetalle" />
+        <activity android:name=".actividades.critomining.MineriaDetalle" />
+        <activity android:name=".metodos.Abrir" />
         <activity android:name=".actividades.creandovideos.VideosDetalle" />
         <activity android:name=".actividades.aplicaciones.AplicacionDetalle" />
         <activity

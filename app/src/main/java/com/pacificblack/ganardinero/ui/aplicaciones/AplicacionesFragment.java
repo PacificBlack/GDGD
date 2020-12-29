@@ -27,8 +27,22 @@ import com.pacificblack.ganardinero.clases.aplicaciones.Aplicaciones;
 
 import java.util.ArrayList;
 
+import static com.pacificblack.ganardinero.constatnes.Constantes.DBAplicaciones;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion1;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion2;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion3;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion4;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion5;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Ffecha;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fimagen1;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fimagen2;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fimagen3;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fimagen4;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Fimagen5;
+import static com.pacificblack.ganardinero.constatnes.Constantes.Ftitulo;
 import static com.pacificblack.ganardinero.constatnes.Constantes.IdAnuncioAplicaciones;
 import static com.pacificblack.ganardinero.metodos.Claves.IdClaveAplicaciones;
+
 
 public class AplicacionesFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -36,7 +50,7 @@ public class AplicacionesFragment extends Fragment {
     private ArrayList<Aplicaciones> listaAplicaciones;
     private InterstitialAd AnuncioAplicacion;
     private FirebaseDatabase bd = FirebaseDatabase.getInstance();
-    private DatabaseReference referencebd = bd.getReference().child("aplicaciones");
+    private DatabaseReference referencebd = bd.getReference().child(DBAplicaciones);
 
     public AplicacionesFragment() {
 
@@ -81,18 +95,18 @@ public class AplicacionesFragment extends Fragment {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
 
-                    String titulo = dataSnapshot.child("titulo").getValue(String.class);
-                    String desc1 = dataSnapshot.child("des1").getValue(String.class);
-                    String desc2 = dataSnapshot.child("des2").getValue(String.class);
-                    String desc3 = dataSnapshot.child("des3").getValue(String.class);
-                    String desc4 = dataSnapshot.child("des4").getValue(String.class);
-                    String desc5 = dataSnapshot.child("des5").getValue(String.class);
-                    String fecha = dataSnapshot.child("fecha").getValue(String.class);
-                    String imagen1 = dataSnapshot.child("imagen1").getValue(String.class);
-                    String imagen2 = dataSnapshot.child("imagen2").getValue(String.class);
-                    String imagen3 = dataSnapshot.child("imagen3").getValue(String.class);
-                    String imagen4 = dataSnapshot.child("imagen4").getValue(String.class);
-                    String imagen5 = dataSnapshot.child("imagen5").getValue(String.class);
+                    String titulo = dataSnapshot.child(Ftitulo).getValue(String.class);
+                    String desc1 = dataSnapshot.child(Fdescripcion1).getValue(String.class);
+                    String desc2 = dataSnapshot.child(Fdescripcion2).getValue(String.class);
+                    String desc3 = dataSnapshot.child(Fdescripcion3).getValue(String.class);
+                    String desc4 = dataSnapshot.child(Fdescripcion4).getValue(String.class);
+                    String desc5 = dataSnapshot.child(Fdescripcion5).getValue(String.class);
+                    String fecha = dataSnapshot.child(Ffecha).getValue(String.class);
+                    String imagen1 = dataSnapshot.child(Fimagen1).getValue(String.class);
+                    String imagen2 = dataSnapshot.child(Fimagen2).getValue(String.class);
+                    String imagen3 = dataSnapshot.child(Fimagen3).getValue(String.class);
+                    String imagen4 = dataSnapshot.child(Fimagen4).getValue(String.class);
+                    String imagen5 = dataSnapshot.child(Fimagen5).getValue(String.class);
 
                     listaAplicaciones.add(new Aplicaciones(titulo, desc1, desc2, desc3, desc4, desc5, fecha, imagen1, imagen2, imagen3, imagen4, imagen5));
 

@@ -15,12 +15,42 @@
         android:id="@+id/nav_aplicaciones"
         android:name="com.pacificblack.ganardinero.ui.aplicaciones.AplicacionesFragment"
         android:label="@string/menu_gd_aplicaciones"
-        tools:layout="@layout/fragment_aplicaciones"/>
+        tools:layout="@layout/fragment_aplicaciones" />
 
     <fragment
         android:id="@+id/nav_videos"
         android:name="com.pacificblack.ganardinero.ui.creandovideos.VideosFragment"
         android:label="@string/menu_gd_videos"
         tools:layout="@layout/fragment_videos" />
+
+    <fragment
+        android:id="@+id/nav_mineria"
+        android:name="com.pacificblack.ganardinero.ui.criptomining.MineriaFragment"
+        android:label="@string/menu_gd_criptomonedas"
+        tools:layout="@layout/fragment_mineria" />
+
+    <fragment
+        android:id="@+id/nav_desarrollo"
+        android:name="com.pacificblack.ganardinero.ui.desarrollo.DesarrolloFragment"
+        android:label="@string/menu_gd_desarrollando"
+        tools:layout="@layout/fragment_desarrollo" />
+
+    <fragment
+        android:id="@+id/nav_publicidad"
+        android:name="com.pacificblack.ganardinero.ui.publicidad.PublicidadFragment"
+        android:label="@string/menu_gd_publicicadad"
+        tools:layout="@layout/fragment_publicidad" />
+
+    <fragment
+        android:id="@+id/nav_vendiendo"
+        android:name="com.pacificblack.ganardinero.ui.vendiendo.VenderFragment"
+        android:label="@string/menu_gd_vendiendo"
+        tools:layout="@layout/fragment_vender" />
+
+    <fragment
+        android:id="@+id/nav_workhome"
+        android:name="com.pacificblack.ganardinero.ui.workhome.WorkHomeFragment"
+        android:label="@string/menu_gd_freelance"
+        tools:layout="@layout/fragment_work_home" />
 
 </navigation>
