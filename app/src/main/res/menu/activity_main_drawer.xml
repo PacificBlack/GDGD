@@ -6,18 +6,18 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_inicio"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_laucher_foreground"
             android:title="@string/menu_inicio" />
 
         <item android:title="@string/facil">
             <menu>
                 <item
                     android:id="@+id/nav_publicidad"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_publicidad"
                     android:title="@string/menu_gd_publicicadad" />
                 <item
                     android:id="@+id/nav_aplicaciones"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_aplicaciones"
                     android:title="@string/menu_gd_aplicaciones" />
             </menu>
         </item>
@@ -26,11 +26,11 @@
             <menu>
                 <item
                     android:id="@+id/nav_videos"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_videos"
                     android:title="@string/menu_gd_videos" />
                 <item
                     android:id="@+id/nav_mineria"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_mineria"
                     android:title="@string/menu_gd_criptomonedas" />
             </menu>
         </item>
@@ -39,15 +39,15 @@
             <menu>
                 <item
                     android:id="@+id/nav_vendiendo"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_vendiendo"
                     android:title="@string/menu_gd_vendiendo" />
                 <item
                     android:id="@+id/nav_desarrollo"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_desarrollo"
                     android:title="@string/menu_gd_desarrollando" />
                 <item
                     android:id="@+id/nav_workhome"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_workhome"
                     android:title="@string/menu_gd_freelance" />
 
             </menu>

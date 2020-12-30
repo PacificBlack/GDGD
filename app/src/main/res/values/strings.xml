@@ -6,14 +6,14 @@
     <string name="menu_gd_aplicaciones">Aplicaciones</string>
     <string name="menu_gd_freelance">Trabajando desde Casa</string>
     <string name="menu_gd_criptomonedas">Mineria de Criptomonedas</string>
-    <string name="menu_gd_publicicadad">Viendo Publicidad</string>
+    <string name="menu_gd_publicicadad">Publicidad</string>
     <string name="menu_gd_desarrollando">Desarrollando Software</string>
     <string name="menu_gd_videos">Creando Videos</string>
     <string name="menu_gd_vendiendo">Vendiendo en Linea</string>
     <!-- Subtitulos menu -->
-    <string name="facil">Facil</string>
+    <string name="facil">Fácil</string>
     <string name="intermedio">Intermedio</string>
-    <string name="dificil">Dificil</string>
+    <string name="dificil">Difícil</string>
     <!-- Rows -->
     <string name="titulo_row">Titulo Rows</string>
     <string name="fecha_row">2020/02/12</string>
@@ -21,6 +21,21 @@
     <string name="vistas_row">Vistas: 0</string>
     <string name="imagen_row">Aquí va una imagen</string>
 
+    <string name="banner_aplicacion">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_desarrollo">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_mineria">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_publicidad">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_vender">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_videos">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_workhome">ca-app-pub-3940256099942544/6300978111</string>
 
-    <string name="anunciotest">ca-app-pub-3940256099942544/6300978111</string>
+    <!-- Slogans de Botones -->
+    <string name="slogan_freelance">¿Quieres ser tu propio jefe, tener tu propio horario y ganar mucho dinero?, esto es para tí</string>
+    <string name="slogan_aplicaciones">¿Te encanta descubrir aplicaciones nuevas? Entonces aquí seras feliz porque encontraras algunas que te pagarán por usarlas</string>
+    <string name="slogan_criptomonedas">Falta poco para que el dinero virtual reemplaze al dolar, ¿Qué esperas para conseguir el tuyo?</string>
+    <string name="slogan_publicidad">Si quieres que te pagen por ver cosas o por presionar click, esta es tu mejor opción</string>
+    <string name="slogan_desarrollando">Aprende a programar y nunca te faltará dinero</string>
+    <string name="slogan_videos">Si te gusta crear contenido entra, tengo buenas noticias para tí</string>
+    <string name="slogan_vendiendo">¿Te apasionan las ventas?, pues bien entra aquí y disfruta</string>
+
 </resources>

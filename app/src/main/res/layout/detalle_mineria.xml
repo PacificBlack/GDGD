@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/imagen_row"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
             </com.google.android.material.card.MaterialCardView>
 
@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
+                android:fontFamily="@font/tommy"
                 android:text="@string/titulo_row"
                 android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
@@ -52,6 +53,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginTop="16dp"
+
+                android:autoLink="all"
+                android:fontFamily="@font/clab"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
@@ -63,7 +67,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
-                ads:adUnitId="@string/anunciotest" />
+                ads:adUnitId="@string/banner_mineria" />
 
             <TextView
                 android:id="@+id/descripcion2_detalle_mineria"
@@ -71,6 +75,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginTop="16dp"
+                android:autoLink="all"
+                android:fontFamily="@font/clab"
+
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
@@ -89,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/imagen_row"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
             </com.google.android.material.card.MaterialCardView>
 
@@ -101,14 +108,17 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
-                ads:adUnitId="@string/anunciotest" />
+                ads:adUnitId="@string/banner_mineria" />
 
             <TextView
                 android:id="@+id/descripcion3_detalle_mineria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+
                 android:layout_marginTop="16dp"
+                android:autoLink="all"
+                android:fontFamily="@font/clab"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
@@ -127,7 +137,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/imagen_row"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
             </com.google.android.material.card.MaterialCardView>
 
@@ -138,7 +148,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
-                ads:adUnitId="@string/anunciotest" />
+                ads:adUnitId="@string/banner_mineria" />
 
             <TextView
                 android:id="@+id/descripcion4_detalle_mineria"
@@ -146,6 +156,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginTop="16dp"
+                android:autoLink="all"
+
+                android:fontFamily="@font/clab"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
@@ -164,7 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/imagen_row"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
             </com.google.android.material.card.MaterialCardView>
 
@@ -175,7 +188,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
-                ads:adUnitId="@string/anunciotest" />
+                ads:adUnitId="@string/banner_mineria" />
 
             <TextView
                 android:id="@+id/descripcion5_detalle_mineria"
@@ -183,6 +196,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginTop="16dp"
+                android:autoLink="all"
+
+                android:fontFamily="@font/clab"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
@@ -201,7 +217,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/imagen_row"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
             </com.google.android.material.card.MaterialCardView>
 

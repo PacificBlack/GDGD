@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
                 android:contentDescription="@string/imagen_row"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <LinearLayout
@@ -38,6 +38,7 @@
                     android:id="@+id/titulo_row_desarrollo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/tommy"
                     android:text="@string/titulo_row"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
@@ -55,6 +56,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:autoLink="all"
+
+                    android:fontFamily="@font/clab"
                     android:maxHeight="150dp"
                     android:text="@string/descripcion_row"
                     android:textAppearance="?attr/textAppearanceBody2"
