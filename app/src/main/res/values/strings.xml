@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Ganar dinero - Guía definitiva</string>
-    <string name="slogan">"Puedes ganar dinero desde cualquier parte del mundo, el unico limite es tu mente"</string>
+    <string name="slogan">"Puedes ganar dinero desde cualquier parte del mundo, el único limite es tu mente"</string>
     <!-- Menu lateral -->
     <string name="menu_inicio">Inicio</string>
     <string name="menu_gd_aplicaciones">Aplicaciones</string>
