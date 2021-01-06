@@ -25,8 +25,10 @@ import com.pacificblack.ganardinero.R;
 import com.pacificblack.ganardinero.actividades.aplicaciones.AplicacionDetalle;
 import com.pacificblack.ganardinero.clases.aplicaciones.Aplicaciones;
 
+import java.security.acl.Permission;
 import java.util.ArrayList;
 
+import static android.Manifest.permission.INTERNET;
 import static com.pacificblack.ganardinero.constatnes.Constantes.DBAplicaciones;
 import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion1;
 import static com.pacificblack.ganardinero.constatnes.Constantes.Fdescripcion2;
@@ -145,7 +147,7 @@ public class AplicacionesFragment extends Fragment {
 
 
                         } else {
-                            Log.d("Anuncio", "No se pudo cargar el anuncio.");
+                            Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }
 
 

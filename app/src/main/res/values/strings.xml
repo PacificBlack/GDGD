@@ -21,13 +21,13 @@
     <string name="vistas_row">Vistas: 0</string>
     <string name="imagen_row">Aquí va una imagen</string>
 
-    <string name="banner_aplicacion">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_desarrollo">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_mineria">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_publicidad">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_vender">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_videos">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_workhome">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_aplicacion">ca-app-pub-7236340326570289/1047406483</string>
+    <string name="banner_desarrollo">ca-app-pub-7236340326570289/3712904759</string>
+    <string name="banner_mineria">ca-app-pub-7236340326570289/2399823089</string>
+    <string name="banner_publicidad">ca-app-pub-7236340326570289/9128064721</string>
+    <string name="banner_vender">ca-app-pub-7236340326570289/7814983058</string>
+    <string name="banner_videos">ca-app-pub-7236340326570289/2819653156</string>
+    <string name="banner_workhome">ca-app-pub-7236340326570289/3329761375</string>
 
     <!-- Slogans de Botones -->
     <string name="slogan_freelance">¿Quieres ser tu propio jefe, tener tu propio horario y ganar mucho dinero?, esto es para tí</string>

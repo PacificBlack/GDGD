@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.publicidad.PublicidadFragment">
+    tools:context=".ui.publicidad.PublicidadFragment"
+    android:background="#365E7D">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_publicidad"

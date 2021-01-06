@@ -1,13 +1,13 @@
 package com.pacificblack.ganardinero.constatnes;
 
 public class Constantes {
-    public static String IdAnuncioAplicaciones = "ca-app-pub-3940256099942544/1033173712";
-    public static String IdAnuncioVideos = "ca-app-pub-3940256099942544/1033173712";
-    public static String IdAnuncioMineria = "ca-app-pub-3940256099942544/1033173712";
-    public static String IdAnuncioDesarrollo = "ca-app-pub-3940256099942544/1033173712";
-    public static String IdAnuncioPublicidad = "ca-app-pub-3940256099942544/1033173712";
-    public static String IdAnuncioVender = "ca-app-pub-3940256099942544/1033173712";
-    public static String IdAnuncioWorkHome = "ca-app-pub-3940256099942544/1033173712";
+    public static String IdAnuncioAplicaciones = "ca-app-pub-7236340326570289/6299733163";
+    public static String IdAnuncioVideos = "ca-app-pub-7236340326570289/6950469852";
+    public static String IdAnuncioMineria = "ca-app-pub-7236340326570289/3904476442";
+    public static String IdAnuncioDesarrollo = "ca-app-pub-7236340326570289/3673569824";
+    public static String IdAnuncioPublicidad = "ca-app-pub-7236340326570289/4324306514";
+    public static String IdAnuncioVender = "ca-app-pub-7236340326570289/3011224847";
+    public static String IdAnuncioWorkHome = "ca-app-pub-7236340326570289/2360488157";
 
 
     public static String Vacio = "Vacio";

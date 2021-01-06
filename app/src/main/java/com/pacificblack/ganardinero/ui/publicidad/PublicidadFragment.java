@@ -143,7 +143,7 @@ public class PublicidadFragment extends Fragment {
 
 
                         } else {
-                            Log.d("Anuncio", "No se pudo cargar el anuncio.");
+                            Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }
 
 

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.criptomining.MineriaFragment">
+    tools:context=".ui.criptomining.MineriaFragment"
+    android:background="#57409B">
 
 
     <androidx.recyclerview.widget.RecyclerView
