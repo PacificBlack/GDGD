@@ -136,6 +136,14 @@ public class VideosFragment extends Fragment {
                             });
 
 
+                        } else if (!AnuncioVideos.isLoaded()){
+                            Videos Videos = listaVideos.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), VideosDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClaveVideos, Videos);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
                         } else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }

@@ -144,6 +144,14 @@ public class WorkHomeFragment extends Fragment {
                             });
 
 
+                        } else if (!AnuncioWorkHome.isLoaded()){
+                            WorkHome workHome = listaWorkHome.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), WorkHomeDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClaveWorkHome, workHome);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
                         } else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }

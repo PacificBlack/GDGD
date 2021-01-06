@@ -146,8 +146,19 @@ public class AplicacionesFragment extends Fragment {
                             });
 
 
-                        } else {
+                        } else if (!AnuncioAplicacion.isLoaded()){
+                            Aplicaciones aplicaciones = listaAplicaciones.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), AplicacionDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClaveAplicaciones, aplicaciones);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
+
+                        }else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
+
+
                         }
 
 

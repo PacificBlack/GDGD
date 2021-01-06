@@ -142,6 +142,14 @@ public class PublicidadFragment extends Fragment {
                             });
 
 
+                        }else if (!AnuncioPublicidad.isLoaded()){
+                            Publicidad Publicidad = listaPublicidad.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), PublicidadDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClavePublicidad, Publicidad);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
                         } else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }

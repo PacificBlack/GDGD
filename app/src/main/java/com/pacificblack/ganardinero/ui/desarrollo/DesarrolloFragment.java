@@ -142,6 +142,15 @@ public class DesarrolloFragment extends Fragment {
                             });
 
 
+                        }else if (!AnuncioDesarrolllo.isLoaded()){
+
+                            Desarrollo Desarrollo = listaDesarrollo.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), DesarrolloDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClaveDesarrollo, Desarrollo);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
                         } else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }

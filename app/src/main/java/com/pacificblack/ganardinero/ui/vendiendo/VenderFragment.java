@@ -143,6 +143,14 @@ public class VenderFragment extends Fragment {
                             });
 
 
+                        }else if (!AnuncioVender.isLoaded()){
+                            Vender vender = listaVender.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), VenderDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClaveVender, vender);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
                         } else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }

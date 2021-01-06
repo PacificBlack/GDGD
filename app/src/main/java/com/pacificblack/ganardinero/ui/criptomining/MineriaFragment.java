@@ -143,6 +143,14 @@ public class MineriaFragment extends Fragment {
                             });
 
 
+                        }else if (!AnuncioMineria.isLoaded()){
+                            Mineria Mineria = listaMineria.get(recyclerView.getChildAdapterPosition(v));
+
+                            Intent cambio = new Intent(getContext(), MineriaDetalle.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable(IdClaveMineria, Mineria);
+                            cambio.putExtras(bundle);
+                            startActivity(cambio);
                         } else {
                             Toast.makeText(getContext(), "Espera un momento a que se carguen los archivos y presiona de nuevo", Toast.LENGTH_LONG).show();
                         }
