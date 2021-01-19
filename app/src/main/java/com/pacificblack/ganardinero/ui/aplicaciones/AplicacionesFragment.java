@@ -126,6 +126,8 @@ public class AplicacionesFragment extends Fragment {
 
                         if (AnuncioAplicacion.isLoaded()) {
 
+                            final int tiempo = 3;
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
                             AnuncioAplicacion.show();
 
                             AnuncioAplicacion.setAdListener(new AdListener() {
@@ -147,6 +149,8 @@ public class AplicacionesFragment extends Fragment {
 
 
                         } else if (!AnuncioAplicacion.isLoaded()){
+
+
                             Aplicaciones aplicaciones = listaAplicaciones.get(recyclerView.getChildAdapterPosition(v));
 
                             Intent cambio = new Intent(getContext(), AplicacionDetalle.class);

@@ -116,6 +116,10 @@ public class VideosFragment extends Fragment {
 
                         if (AnuncioVideos.isLoaded()) {
 
+                            final int tiempo = 3;
+
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
+
                             AnuncioVideos.show();
 
                             AnuncioVideos.setAdListener(new AdListener() {

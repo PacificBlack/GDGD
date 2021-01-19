@@ -123,6 +123,10 @@ public class VenderFragment extends Fragment {
 
                         if (AnuncioVender.isLoaded()) {
 
+                            final int tiempo = 3;
+
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
+
                             AnuncioVender.show();
 
                             AnuncioVender.setAdListener(new AdListener() {

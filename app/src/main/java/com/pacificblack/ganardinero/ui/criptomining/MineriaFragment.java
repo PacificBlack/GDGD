@@ -123,6 +123,10 @@ public class MineriaFragment extends Fragment {
 
                         if (AnuncioMineria.isLoaded()) {
 
+                            final int tiempo = 3;
+
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
+
                             AnuncioMineria.show();
 
                             AnuncioMineria.setAdListener(new AdListener() {

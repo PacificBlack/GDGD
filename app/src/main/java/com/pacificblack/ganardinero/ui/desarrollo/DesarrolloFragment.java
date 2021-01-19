@@ -122,6 +122,10 @@ public class DesarrolloFragment extends Fragment {
 
                         if (AnuncioDesarrolllo.isLoaded()) {
 
+                            final int tiempo = 3;
+
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
+
                             AnuncioDesarrolllo.show();
 
                             AnuncioDesarrolllo.setAdListener(new AdListener() {

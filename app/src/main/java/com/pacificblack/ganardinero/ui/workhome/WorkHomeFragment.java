@@ -124,6 +124,10 @@ public class WorkHomeFragment extends Fragment {
 
                         if (AnuncioWorkHome.isLoaded()) {
 
+                            final int tiempo = 3;
+
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
+
                             AnuncioWorkHome.show();
 
                             AnuncioWorkHome.setAdListener(new AdListener() {

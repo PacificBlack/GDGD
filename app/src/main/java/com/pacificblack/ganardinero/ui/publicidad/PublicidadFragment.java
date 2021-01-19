@@ -122,6 +122,10 @@ public class PublicidadFragment extends Fragment {
 
                         if (AnuncioPublicidad.isLoaded()) {
 
+                            final int tiempo = 3;
+
+                            Toast.makeText(getContext(),"Espera un momento mientras se carga la guía",tiempo).show();
+
                             AnuncioPublicidad.show();
 
                             AnuncioPublicidad.setAdListener(new AdListener() {
