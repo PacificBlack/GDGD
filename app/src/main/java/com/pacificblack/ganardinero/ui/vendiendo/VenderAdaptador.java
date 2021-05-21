@@ -3,8 +3,6 @@ package com.pacificblack.ganardinero.ui.vendiendo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,49 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pacificblack.ganardinero.R;
-import com.pacificblack.ganardinero.clases.vendiendo.Vender;
+import com.pacificblack.ganardinero.ui.vendiendo.clase.Vender;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class VenderAdaptador extends RecyclerView.Adapter<VenderAdaptador.VenderHolder> implements View.OnClickListener, Filterable {
-    private List<Vender> listaVender;
-    private List<Vender> listaVenderFull;
-
-    public Filter listaVenderFiltro = new Filter() {
-        @Override
-        protected Filter.FilterResults performFiltering(CharSequence constraint) {
-            List<Vender> filtroListaAplicacion = new ArrayList<>();
-            if (constraint == null || constraint.length() == 0) {
-                filtroListaAplicacion.addAll(listaVenderFull);
-
-            } else {
-                String filtroparametro = constraint.toString().toLowerCase().trim();
-                for (Vender itemAplicacion : listaVenderFull) {
-                    if (itemAplicacion.getTitulo().toLowerCase().contains(filtroparametro) || itemAplicacion.getDes1().toLowerCase().contains(filtroparametro)) {
-                        filtroListaAplicacion.add(itemAplicacion);
-                    }
-                }
-            }
-            Filter.FilterResults results = new Filter.FilterResults();
-            results.values = filtroListaAplicacion;
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, Filter.FilterResults results) {
-            listaVender.clear();
-            listaVender.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
-
+public class VenderAdaptador extends RecyclerView.Adapter<VenderAdaptador.VenderHolder> implements View.OnClickListener {
+    private final List<Vender> listaVender;
     private View.OnClickListener listener;
 
     public VenderAdaptador(List<Vender> listaVender) {
         this.listaVender = listaVender;
-        listaVenderFull = new ArrayList<>(listaVender);
     }
 
     @Override
@@ -68,12 +34,6 @@ public class VenderAdaptador extends RecyclerView.Adapter<VenderAdaptador.Vender
         this.listener = listener;
     }
 
-
-    @Override
-    public Filter getFilter() {
-        return listaVenderFiltro;
-    }
-
     @NonNull
     @Override
     public VenderAdaptador.VenderHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -84,9 +44,9 @@ public class VenderAdaptador extends RecyclerView.Adapter<VenderAdaptador.Vender
 
     @Override
     public void onBindViewHolder(@NonNull VenderAdaptador.VenderHolder holder, int position) {
-        if (listaVender.get(position).getImagen1() != null) {
+        if (listaVender.get(position).getImagenes() != null) {
 
-            Picasso.get().load(listaVender.get(position).getImagen1())
+            Picasso.get().load(listaVender.get(position).getImagenes()[0])
                     .placeholder(R.drawable.sample)
                     .error(R.drawable.sample)
                     .into(holder.imagen);

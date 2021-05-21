@@ -3,8 +3,6 @@ package com.pacificblack.ganardinero.ui.desarrollo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,47 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pacificblack.ganardinero.R;
-import com.pacificblack.ganardinero.clases.desarrollo.Desarrollo;
+import com.pacificblack.ganardinero.ui.desarrollo.clase.Desarrollo;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class DesarrolloAdaptador extends RecyclerView.Adapter<DesarrolloAdaptador.DesarrolloHolder> implements View.OnClickListener, Filterable {
-    private List<Desarrollo> listaDesarrollo;
-    private List<Desarrollo> listaDesarrolloFull;
-    public Filter listaDesarrolloFiltro = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Desarrollo> filtroListaDesarrollo = new ArrayList<>();
-            if (constraint == null || constraint.length() == 0) {
-                filtroListaDesarrollo.addAll(listaDesarrolloFull);
-
-            } else {
-                String filtroparametro = constraint.toString().toLowerCase().trim();
-                for (Desarrollo itemDesarrollo : listaDesarrolloFull) {
-                    if (itemDesarrollo.getTitulo().toLowerCase().contains(filtroparametro) || itemDesarrollo.getDes1().toLowerCase().contains(filtroparametro)) {
-                        filtroListaDesarrollo.add(itemDesarrollo);
-                    }
-                }
-            }
-            FilterResults results = new FilterResults();
-            results.values = filtroListaDesarrollo;
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            listaDesarrollo.clear();
-            listaDesarrollo.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
+public class DesarrolloAdaptador extends RecyclerView.Adapter<DesarrolloAdaptador.DesarrolloHolder> implements View.OnClickListener {
+    private final List<Desarrollo> listaDesarrollo;
     private View.OnClickListener listener;
 
     public DesarrolloAdaptador(List<Desarrollo> listaDesarrollo) {
         this.listaDesarrollo = listaDesarrollo;
-        listaDesarrolloFull = new ArrayList<>(listaDesarrollo);
     }
 
     @Override
@@ -66,10 +34,6 @@ public class DesarrolloAdaptador extends RecyclerView.Adapter<DesarrolloAdaptado
         this.listener = listener;
     }
 
-    @Override
-    public Filter getFilter() {
-        return listaDesarrolloFiltro;
-    }
 
     @NonNull
     @Override
@@ -81,9 +45,9 @@ public class DesarrolloAdaptador extends RecyclerView.Adapter<DesarrolloAdaptado
 
     @Override
     public void onBindViewHolder(@NonNull DesarrolloAdaptador.DesarrolloHolder holder, int position) {
-        if (listaDesarrollo.get(position).getImagen1() != null) {
+        if (listaDesarrollo.get(position).getImagenes() != null) {
 
-            Picasso.get().load(listaDesarrollo.get(position).getImagen1())
+            Picasso.get().load(listaDesarrollo.get(position).getImagenes()[0])
                     .placeholder(R.drawable.sample)
                     .error(R.drawable.sample)
                     .into(holder.imagen);

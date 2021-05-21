@@ -3,8 +3,6 @@ package com.pacificblack.ganardinero.ui.publicidad;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,47 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pacificblack.ganardinero.R;
-import com.pacificblack.ganardinero.clases.publicidad.Publicidad;
+import com.pacificblack.ganardinero.ui.publicidad.clase.Publicidad;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class PublicidadAdaptador extends RecyclerView.Adapter<PublicidadAdaptador.PublicidadHolder> implements View.OnClickListener, Filterable {
-    private List<Publicidad> listaPublicidad;
-    private List<Publicidad> listaPublicidadFull;
-    public Filter listaPublicidadFiltro = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Publicidad> filtroListaPublicidad = new ArrayList<>();
-            if (constraint == null || constraint.length() == 0) {
-                filtroListaPublicidad.addAll(listaPublicidadFull);
-
-            } else {
-                String filtroparametro = constraint.toString().toLowerCase().trim();
-                for (Publicidad itemPublicidad : listaPublicidadFull) {
-                    if (itemPublicidad.getTitulo().toLowerCase().contains(filtroparametro) || itemPublicidad.getDes1().toLowerCase().contains(filtroparametro)) {
-                        filtroListaPublicidad.add(itemPublicidad);
-                    }
-                }
-            }
-            FilterResults results = new FilterResults();
-            results.values = filtroListaPublicidad;
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            listaPublicidad.clear();
-            listaPublicidad.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
+public class PublicidadAdaptador extends RecyclerView.Adapter<PublicidadAdaptador.PublicidadHolder> implements View.OnClickListener {
+    private final List<Publicidad> listaPublicidad;
     private View.OnClickListener listener;
 
     public PublicidadAdaptador(List<Publicidad> listaPublicidad) {
         this.listaPublicidad = listaPublicidad;
-        listaPublicidadFull = new ArrayList<>(listaPublicidad);
     }
 
     @Override
@@ -66,10 +34,6 @@ public class PublicidadAdaptador extends RecyclerView.Adapter<PublicidadAdaptado
         this.listener = listener;
     }
 
-    @Override
-    public Filter getFilter() {
-        return listaPublicidadFiltro;
-    }
 
     @NonNull
     @Override
@@ -81,9 +45,9 @@ public class PublicidadAdaptador extends RecyclerView.Adapter<PublicidadAdaptado
 
     @Override
     public void onBindViewHolder(@NonNull PublicidadAdaptador.PublicidadHolder holder, int position) {
-        if (listaPublicidad.get(position).getImagen1() != null) {
+        if (listaPublicidad.get(position).getImagenes() != null) {
 
-            Picasso.get().load(listaPublicidad.get(position).getImagen1())
+            Picasso.get().load(listaPublicidad.get(position).getImagenes()[0])
                     .placeholder(R.drawable.sample)
                     .error(R.drawable.sample)
                     .into(holder.imagen);

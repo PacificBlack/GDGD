@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GanarDineroGuíaDefinitiva">
-        <activity android:name=".actividades.workhome.WorkHomeDetalle"></activity>
-        <activity android:name=".actividades.vender.VenderDetalle" />
-        <activity android:name=".actividades.publicidad.PublicidadDetalle" />
-        <activity android:name=".actividades.desarrollo.DesarrolloDetalle" />
-        <activity android:name=".actividades.critomining.MineriaDetalle" />
+        <activity android:name=".ui.workhome.actividad.WorkHomeDetalle"></activity>
+        <activity android:name=".ui.vendiendo.actividad.VenderDetalle" />
+        <activity android:name=".ui.publicidad.actividad.PublicidadDetalle" />
+        <activity android:name=".ui.desarrollo.actividad.DesarrolloDetalle" />
+        <activity android:name=".ui.criptomining.actividad.MineriaDetalle" />
         <activity android:name=".metodos.Abrir" />
-        <activity android:name=".actividades.creandovideos.VideosDetalle" />
-        <activity android:name=".actividades.aplicaciones.AplicacionDetalle" />
+        <activity android:name=".ui.creandovideos.actividad.VideosDetalle" />
+        <activity android:name=".ui.aplicaciones.actividad.AplicacionDetalle" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

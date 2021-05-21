@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     android:orientation="vertical"
-    tools:context=".actividades.desarrollo.DesarrolloDetalle">
+    tools:context=".ui.desarrollo.actividad.DesarrolloDetalle">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,32 +28,42 @@
                 app:cardCornerRadius="10dp"
                 tools:targetApi="lollipop">
 
-                <ImageView
-                    android:id="@+id/imagen1_detalle_desarrollo"
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imagenes_detalle_desarrollo"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/imagen_row"
-                    android:scaleType="fitCenter"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                    android:layout_height="300dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="5"
+                    app:sliderStartAutoCycle="true" />
+
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/titulo_detalle_desarrollo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:fontFamily="@font/tommy"
+                android:fontFamily="@font/roboto_bold"
                 android:text="@string/titulo_row"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <TextView
                 android:id="@+id/descripcion1_detalle_desarrollo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
@@ -62,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_desarrollo" />
 
@@ -70,29 +81,11 @@
                 android:id="@+id/descripcion2_detalle_desarrollo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="10dp"
-                android:elevation="15dp"
-                app:cardCornerRadius="10dp"
-                tools:targetApi="lollipop">
-
-                <ImageView
-                    android:id="@+id/imagen2_detalle_desarrollo"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/imagen_row"
-                    android:scaleType="fitCenter"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
-            </com.google.android.material.card.MaterialCardView>
 
 
             <com.google.android.gms.ads.AdView
@@ -100,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_desarrollo" />
 
@@ -108,36 +101,18 @@
                 android:id="@+id/descripcion3_detalle_desarrollo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="10dp"
-                android:elevation="15dp"
-                app:cardCornerRadius="10dp"
-                tools:targetApi="lollipop">
-
-                <ImageView
-                    android:id="@+id/imagen3_detalle_desarrollo"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/imagen_row"
-                    android:scaleType="fitCenter"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
-            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.gms.ads.AdView
                 android:id="@+id/banner3_desarrollo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_desarrollo" />
 
@@ -145,36 +120,18 @@
                 android:id="@+id/descripcion4_detalle_desarrollo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="10dp"
-                android:elevation="15dp"
-                app:cardCornerRadius="10dp"
-                tools:targetApi="lollipop">
-
-                <ImageView
-                    android:id="@+id/imagen4_detalle_desarrollo"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/imagen_row"
-                    android:scaleType="fitCenter"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
-            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.gms.ads.AdView
                 android:id="@+id/banner4_desarrollo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_desarrollo" />
 
@@ -182,29 +139,23 @@
                 android:id="@+id/descripcion5_detalle_desarrollo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@string/descripcion_row"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="10dp"
-                android:elevation="15dp"
-                app:cardCornerRadius="10dp"
-                tools:targetApi="lollipop">
 
-                <ImageView
-                    android:id="@+id/imagen5_detalle_desarrollo"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/imagen_row"
-                    android:scaleType="fitCenter"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
-            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ir_desarrollo"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:layout_height="wrap_content"
+                ads:cornerRadius="15dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/ire"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"/>
 
         </LinearLayout>
     </ScrollView>

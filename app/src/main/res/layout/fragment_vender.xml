@@ -2,9 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="5dp"
     android:layout_height="match_parent"
-    tools:context=".ui.vendiendo.VenderFragment"
-    android:background="#C0AB91">
+    tools:context=".ui.vendiendo.VenderFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_vender"

@@ -9,6 +9,8 @@ public class Constantes {
     public static String IdAnuncioVender = "ca-app-pub-7236340326570289/3011224847";
     public static String IdAnuncioWorkHome = "ca-app-pub-7236340326570289/2360488157";
 
+    public static String IdAnuncioBonificado = "ca-app-pub-7236340326570289/7176047514";
+
 
     public static String Vacio = "Vacio";
     public static String Imagen = "imagen";
@@ -29,9 +31,7 @@ public class Constantes {
     public static String Fdescripcion4 = "des4";
     public static String Fdescripcion5 = "des5";
     public static String Ffecha = "fecha";
-    public static String Fimagen1 = "imagen1";
-    public static String Fimagen2 = "imagen2";
-    public static String Fimagen3 = "imagen3";
-    public static String Fimagen4 = "imagen4";
-    public static String Fimagen5 = "imagen5";
+    public static String Fenlace = "enlace";
+    public static String Fcantidad = "cantidad";
+    public static String Fimagenes = "imagen";
 }

@@ -22,10 +22,7 @@ public class Abrir extends AppCompatActivity {
         setContentView(R.layout.abrir);
 
         imagengrande = findViewById(R.id.imagengrande);
-
-
         Bundle recibido = getIntent().getExtras();
-
 
         if (recibido != null) {
             String valor = getIntent().getExtras().getString(Imagen);

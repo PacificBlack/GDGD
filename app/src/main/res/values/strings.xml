@@ -37,5 +37,9 @@
     <string name="slogan_desarrollando">Aprende a programar y nunca te faltará dinero</string>
     <string name="slogan_videos">Si te gusta crear contenido entra, tengo buenas noticias para tí</string>
     <string name="slogan_vendiendo">¿Te apasionan las ventas?, pues bien entra aquí y disfruta</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ir">Desbloquea el enlace</string>
+    <string name="ire">Abrir</string>
 
 </resources>

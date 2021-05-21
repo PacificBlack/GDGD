@@ -3,8 +3,6 @@ package com.pacificblack.ganardinero.ui.creandovideos;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,47 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pacificblack.ganardinero.R;
-import com.pacificblack.ganardinero.clases.creandovideos.Videos;
+import com.pacificblack.ganardinero.ui.creandovideos.clase.Videos;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class VideosAdaptador extends RecyclerView.Adapter<VideosAdaptador.VideosHolder> implements View.OnClickListener, Filterable {
+public class VideosAdaptador extends RecyclerView.Adapter<VideosAdaptador.VideosHolder> implements View.OnClickListener{
     private List<Videos> listaVideos;
-    private List<Videos> listaVideosFull;
-    public Filter listaVideosFiltro = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Videos> filtroListaVideo = new ArrayList<>();
-            if (constraint == null || constraint.length() == 0) {
-                filtroListaVideo.addAll(listaVideosFull);
-
-            } else {
-                String filtroparametro = constraint.toString().toLowerCase().trim();
-                for (Videos itemVideo : listaVideosFull) {
-                    if (itemVideo.getTitulo().toLowerCase().contains(filtroparametro) || itemVideo.getDes1().toLowerCase().contains(filtroparametro)) {
-                        filtroListaVideo.add(itemVideo);
-                    }
-                }
-            }
-            FilterResults results = new FilterResults();
-            results.values = filtroListaVideo;
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            listaVideos.clear();
-            listaVideos.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
     private View.OnClickListener listener;
 
     public VideosAdaptador(List<Videos> listaVideos) {
         this.listaVideos = listaVideos;
-        listaVideosFull = new ArrayList<>(listaVideos);
     }
 
     @Override
@@ -76,9 +44,9 @@ public class VideosAdaptador extends RecyclerView.Adapter<VideosAdaptador.Videos
 
     @Override
     public void onBindViewHolder(@NonNull VideosAdaptador.VideosHolder holder, int position) {
-        if (listaVideos.get(position).getImagen1() != null) {
+        if (listaVideos.get(position).getImagenes() != null) {
 
-            Picasso.get().load(listaVideos.get(position).getImagen1())
+            Picasso.get().load(listaVideos.get(position).getImagenes()[0])
                     .placeholder(R.drawable.sample)
                     .error(R.drawable.sample)
                     .into(holder.imagen);
@@ -96,10 +64,6 @@ public class VideosAdaptador extends RecyclerView.Adapter<VideosAdaptador.Videos
         return listaVideos.size();
     }
 
-    @Override
-    public Filter getFilter() {
-        return listaVideosFiltro;
-    }
 
     public class VideosHolder extends RecyclerView.ViewHolder {
         TextView titulo, descripcion, fecha;

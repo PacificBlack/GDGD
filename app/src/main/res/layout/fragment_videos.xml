@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.creandovideos.VideosFragment"
-    android:background="#3B5A9B">
+    android:padding="5dp"
+    tools:context=".ui.creandovideos.VideosFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_videos"
